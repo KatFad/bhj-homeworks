@@ -16,5 +16,6 @@ for (let item of dropdownItem) {
 
 function dropItem() {
     this.closest('.dropdown__list').closest('.dropdown').querySelector('.dropdown__value').textContent = this.textContent;
+    this.closest('.dropdown').querySelector('.dropdown__list').classList.remove('dropdown__list_active');
     return false
 }
