@@ -37,8 +37,12 @@ class Game {
 
   registerEvents() {
     document.addEventListener('keydown',(event)=> {
-      this.currentSymbol.textContent === event.key ? this.success() : this.fail()
+      if (!event.altKey && !event.shiftKey) {  // повышенный уровень задачи
+        this.currentSymbol.textContent.charCodeAt() === event.key.toLowerCase().charCodeAt() ? this.success() : this.fail()
+      }
     });
+
+
   }
 
   success() {
@@ -84,7 +88,8 @@ class Game {
         'popcorn',
         'cinema',
         'love',
-        'javascript'
+        'javascript',
+        'я люблю kitkat'
       ],
       index = Math.floor(Math.random() * words.length);
 
