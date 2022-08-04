@@ -22,15 +22,9 @@ function fontSize(event) {
     document.querySelector('.font-size_active').classList.remove('font-size_active');
     this.classList.add('font-size_active');
 
-    if (this.classList.contains('font-size_small')) {
-        book.classList.add('book_fs-small');
-    } else if (this.classList.contains('font-size_big')) {
-        book.classList.add('book_fs-big');
-    } else {
-        book.classList.remove('book_fs-small');
-        book.classList.remove('book_fs-big');
-    }
-
+    book.classList.remove('book_fs-small', 'book_fs-big')
+    book.classList.add('book_fs-' + this.dataset.size);
+    
 }
 
 function bookControlColor(event) {
